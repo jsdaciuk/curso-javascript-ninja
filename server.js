@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 32769;
+
+const port = 3000;
 app.use(express.static('.'))
 
 app.get('/', (_, res) => {
