@@ -1,7 +1,27 @@
 (function () {
   'use strict';
 
-/** Seção debug */
+  /** Seção eventos */
+
+  function on(element, event, callback) {
+    document.querySelector(element)
+      .addEventListener(event, callback, false);
+  }
+
+  on('[data-js="link"]', 'click', function (event) {
+    event.preventDefault();
+    alert('Clicou no a');
+  });
+
+  on('[data-js="div"]', 'click', function () {
+    alert('Clicou na div');
+  });
+
+  on('[data-js="span"]', 'click', function () {
+    alert('Clicou no span');
+  });
+
+  /** Seção debug */
 
   // var arr = [
   //   { item: 'Arroz', preco: 10, weight: 5 },

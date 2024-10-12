@@ -1,0 +1,34 @@
+.button {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.button-blue {
+  background-color: blue;
+}
+
+.button-green {
+  background-color: green;
+}
+
+div[data-js="div"] {
+  border: 1px solid blue;
+  padding: 10px;
+  margin: 10px;
+}
+
+a[data-js="link"] {
+  border: 1px solid red;
+  padding: 20px;
+  margin: 10px;
+}
+
+span[data-js="span"] {
+  border: 1px solid green;
+  padding: 30px;
+  margin: 10px;
+}
