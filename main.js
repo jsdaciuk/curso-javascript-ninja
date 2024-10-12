@@ -8,19 +8,38 @@
       .addEventListener(event, callback, false);
   }
 
-  on('[data-js="link"]', 'click', function (event) {
-    event.preventDefault();
-    alert('Clicou no a');
+  function off(element, event, callback) {
+    document.querySelector(element)
+      .removeEventListener(event, callback, false);
+  }
+
+  function handleClick(message) {
+    return function (e) {
+      e.preventDefault();
+      alert(message);
+    };
+  }
+
+  const handleClickDiv = handleClick('1º evento de click no div');
+  const handleClickNovoDiv = handleClick('2º evento de click no div');
+
+  on('[data-js="div"]', 'click', handleClickDiv);
+  off('[data-js="div"]', 'click', handleClickDiv);
+  on('[data-js="div"]', 'click', handleClickNovoDiv);
+  on('[data-js="div"]', 'click', handleClickDiv);
+
+  on('[data-js="link"]', 'click', handleClick('1º evento de click no link'));
+
+  on('[data-js="span"]', 'click', handleClick('1º evento de click no span'));
+
+  on('[data-js="input"]', 'keydown', function () {
+    console.log(this.value);
   });
 
-  on('[data-js="div"]', 'click', function () {
-    alert('Clicou na div');
+  on('[data-js="select"]', 'change', function () {
+    document.querySelector('[data-js="input"]').value = this.value;
   });
-
-  on('[data-js="span"]', 'click', function () {
-    alert('Clicou no span');
-  });
-
+  
   /** Seção debug */
 
   // var arr = [
