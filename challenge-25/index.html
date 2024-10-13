@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos diversos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div>
+    <h1>Eventos de Navegação e Elementos</h1>
+    <button id="clickButton">Clique aqui</button>
+    <input type="text" id="textInput" placeholder="Digite algo" />
+    <form id="formExample">
+      <input type="text" name="name" placeholder="Nome" required>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <div>
+    <h1>Eventos de Drag and Drop</h1>
+    <div id="drag-source" draggable="true">Arraste-me</div>
+    <div id="drop-target">Solte aqui</div>
+  </div>
+
+  <div>
+    <h1>Eventos de Mídia</h1>
+    <video id="media" controls>
+      <source src="mario_salles.mp4" type="video/mp4">
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <div id="log"></div>
+  </div>
+
+  <script src="challenge-25.js"></script>
+</body>
+</html>

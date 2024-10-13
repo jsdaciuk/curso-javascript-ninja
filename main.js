@@ -1,8 +1,68 @@
 (function () {
   'use strict';
 
-  /** Seção eventos */
+  /** Seção DOM */
+  var $divMain = document.querySelector('[data-js="div-main"]');
+  var $main = document.querySelector('.main');
 
+  var $mainHeader = document.querySelector('.main-header');
+  var $h1 = $mainHeader.firstElementChild;
+
+  var $mainFooter = document.querySelector('.main-footer');
+  $main.replaceChild($mainHeader, $mainFooter);
+
+  var $mainContent = document.querySelector('.main-content');
+  var $firstText = $mainContent.firstChild;
+
+
+  console.log($h1.hasChildNodes());
+  $mainHeader.removeChild($h1);
+
+
+  $mainContent.appendChild($mainHeader); // header.main-header
+  $mainContent.insertBefore($mainHeader, $firstText); // header.main-header
+
+  var $cloneMainHeader = $mainHeader.cloneNode(true); // header.main-header
+  $mainContent.appendChild($cloneMainHeader); // header.main-header
+
+  console.log($divMain.parentNode); // body
+  console.log($main.childNodes) // NodeList(7) [text, header.main-header, text, section.main-content, text, footer.main-footer, text]
+  console.log($main.children); // HTMLCollection(3) [header.main-header, section.main-content, footer.main-footer]
+  console.log($main.firstElementChild); // header.main-header
+  console.log($main.firstChild); // #text
+  console.log($main.nextSibling); // #text
+  console.log($main.previousSibling); // #text
+
+  console.log($main.firstChild); // #text
+
+  // Node types:
+  // 1 - Element
+  // 2 - Attribute
+  // 3 - Text
+  // 8 - Comment
+  // 9 - Document
+  // 11 - Document fragment
+  console.log($main.firstChild.nodeType); // 3
+
+  console.log($mainContent.firstChild.nodeValue); // Texto 1
+  console.log($mainContent.firstChild.nodeName); // # text
+  console.log($mainContent.firstChild.nextSibling.nodeName); // comment
+
+  console.log($main.hasAttribute('class')); // true
+  console.log($main.hasAttribute('data-js')); // true
+  console.log($main.hasAttribute('id')); // false
+
+  console.log($mainContent.firstElementChild.hasAttribute('class')); // true
+  console.log($mainContent.firstElementChild.hasAttributes()); // true
+
+
+
+
+
+
+  /*
+  Seção eventos
+  */
   function on(element, event, callback) {
     document.querySelector(element)
       .addEventListener(event, callback, false);
@@ -20,8 +80,8 @@
     };
   }
 
-  const handleClickDiv = handleClick('1º evento de click no div');
-  const handleClickNovoDiv = handleClick('2º evento de click no div');
+  const handleClickDiv = handleClick('1º evento de click no div:');
+  const handleClickNovoDiv = handleClick('2º evento de click no div:');
 
   on('[data-js="div"]', 'click', handleClickDiv);
   off('[data-js="div"]', 'click', handleClickDiv);
@@ -39,7 +99,7 @@
   on('[data-js="select"]', 'change', function () {
     document.querySelector('[data-js="input"]').value = this.value;
   });
-  
+
   /** Seção debug */
 
   // var arr = [

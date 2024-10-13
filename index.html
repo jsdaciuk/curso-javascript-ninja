@@ -8,14 +8,41 @@
 </head>
 
 <body>
+  <div data-js="div-main">
+    <h1>Trabalhando com DOM</h1>
+    <div class="main" data-js="main">
+      <header class="main-header">
+        <h1 class="main-header__title">Titulo da seção</h1>
+      </header>
+      <section class="main-content">
+        Texto 1
+        <!-- Comentário -->
+        <div class="entry">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, nulla?
+            Dolore reprehenderit accusantium obcaecati ratione pariatur hic, modi,
+            tenetur dicta error inventore illum odio officiis provident.
+            Et reprehenderit corporis voluptas!
+          </p>
+        </div>
+        Texto 2
+      </section>
+      <footer class="main-footer">
+        <small class="main-footer__copyright">
+          &copy; 2024 Todos os direitos reservados
+        </small>
+      </footer>
+    </div>
+  </div>
 
   <div>
+    <h1>Nunca faça isso! :D</h1>
     <!-- Neste caso a ação padrão do link será ignorada devido o javascript: -->
     <a href="javascript:" onclick="boom2()" class="button button-green">Click!</a>
 
     <!-- mesma coisa ocorre a seguir devido a prevenção no evento padrão do link -->
     <a href="#" class="button button-blue">Boom!</a>
   </div>
+
   <div>
     <h2>Eventos!</h2>
     <div data-js="div">
@@ -24,6 +51,7 @@
       </a>
     </div>
   </div>
+
   <div>
     <h2>Mais Eventos :D</h2>
     <input type="text" data-js="input">
@@ -33,7 +61,6 @@
       <option value="3">3</option>
     </select>
   </div>
-
 
   <script src="main.js"></script>
   <script>
