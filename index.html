@@ -2,14 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>JS Ninja - server</title>
+  <meta charset="utf-8">
+  <title>JS Ninja - server</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <div>
+    <!-- Neste caso a ação padrão do link será ignorada devido o javascript: -->
+    <a href="javascript:" onclick="boom2()" class="button button-green">Click!</a>
 
-    <script src="main.js"></script>
+    <!-- mesma coisa ocorre a seguir devido a prevenção no evento padrão do link -->
+    <a href="#" class="button button-blue">Boom!</a>
+  </div>
+  <div>
+    <h2>Eventos!</h2>
+    <div data-js="div">
+      <a href="#" data-js="link">
+        a <span data-js="span">span</span>
+      </a>
+    </div>
+  </div>
+  <div>
+    <h2>Mais Eventos :D</h2>
+    <input type="text" data-js="input">
+    <select data-js="select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+
+
+  <script src="main.js"></script>
+  <script>
+    var $a = document.querySelector('a.button.button-blue');
+    $a.addEventListener('click', boom, false)
+
+    function boom(event) {
+      event.preventDefault();
+      alert('Boom!');
+    }
+
+    function boom2() {
+      alert('Outro boom!');
+    }
+  </script>
 
 </body>
 

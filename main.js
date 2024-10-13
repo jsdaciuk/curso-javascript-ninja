@@ -1,7 +1,46 @@
 (function () {
   'use strict';
 
-/** Seção debug */
+  /** Seção eventos */
+
+  function on(element, event, callback) {
+    document.querySelector(element)
+      .addEventListener(event, callback, false);
+  }
+
+  function off(element, event, callback) {
+    document.querySelector(element)
+      .removeEventListener(event, callback, false);
+  }
+
+  function handleClick(message) {
+    return function (e) {
+      e.preventDefault();
+      alert(message);
+    };
+  }
+
+  const handleClickDiv = handleClick('1º evento de click no div');
+  const handleClickNovoDiv = handleClick('2º evento de click no div');
+
+  on('[data-js="div"]', 'click', handleClickDiv);
+  off('[data-js="div"]', 'click', handleClickDiv);
+  on('[data-js="div"]', 'click', handleClickNovoDiv);
+  on('[data-js="div"]', 'click', handleClickDiv);
+
+  on('[data-js="link"]', 'click', handleClick('1º evento de click no link'));
+
+  on('[data-js="span"]', 'click', handleClick('1º evento de click no span'));
+
+  on('[data-js="input"]', 'keydown', function () {
+    console.log(this.value);
+  });
+
+  on('[data-js="select"]', 'change', function () {
+    document.querySelector('[data-js="input"]').value = this.value;
+  });
+  
+  /** Seção debug */
 
   // var arr = [
   //   { item: 'Arroz', preco: 10, weight: 5 },
