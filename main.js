@@ -1,29 +1,38 @@
 (function () {
   'use strict';
 
-  var arr = [1, 2, 3, 4, 5];
-  var arr2 = arr.map(function (item) {
-    return item;
-  });
-  var arr3 = arr.slice();
-  var arr4 = arr.concat();
+  var fragment = document.createDocumentFragment();
+  var childP = document.createElement('p');
+  var textChildP = document.createTextNode('Texto da tag p');
 
-  console.log(arr);
-  console.log(arr2);
-  console.log(arr3);
-  console.log(arr4);
-  console.log(arr === arr2);
-  console.log(arr === arr3);
-  console.log(arr === arr4);
+  childP.appendChild(textChildP);
+  fragment.appendChild(childP);
 
-  var $divs = document.querySelectorAll('div');
-  var $divCopy = Array.prototype.slice.call($divs);
-  console.log($divs, $divCopy, $divs === $divCopy);
+  document.body.appendChild(fragment);
 
-  console.log('----------------');
-  var arr = [1, 2, 3, 4, 5];
-  console.log(Object.prototype.toString.call(arr));
-  console.log({prop1: 1, prop2: 2, prop3: 3}.toString());
+  // var arr = [1, 2, 3, 4, 5];
+  // var arr2 = arr.map(function (item) {
+  //   return item;
+  // });
+  // var arr3 = arr.slice();
+  // var arr4 = arr.concat();
+
+  // console.log(arr);
+  // console.log(arr2);
+  // console.log(arr3);
+  // console.log(arr4);
+  // console.log(arr === arr2);
+  // console.log(arr === arr3);
+  // console.log(arr === arr4);
+
+  // var $divs = document.querySelectorAll('div');
+  // var $divCopy = Array.prototype.slice.call($divs);
+  // console.log($divs, $divCopy, $divs === $divCopy);
+
+  // console.log('----------------');
+  // var arr = [1, 2, 3, 4, 5];
+  // console.log(Object.prototype.toString.call(arr));
+  // console.log({prop1: 1, prop2: 2, prop3: 3}.toString());
 
   /** Seção eventos */
 
