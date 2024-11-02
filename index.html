@@ -3,53 +3,35 @@
 
 <head>
   <meta charset="utf-8">
-  <title>JS Ninja - server</title>
+  <title>DOM</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div>
-    <!-- Neste caso a ação padrão do link será ignorada devido o javascript: -->
-    <a href="javascript:" onclick="boom2()" class="button button-green">Click!</a>
+  <div class="main" id="id-main" data-js="main" data-number1="1" data-number2="2">
+    <header class="main-header">
+      <h1 class="main-header__title">Titulo da página</h1>
+    </header>
+    <section class="main-content">
+      Texto1
+      <div class="entry">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eos iusto voluptas aperiam eveniet tempore alias
+          incidunt enim, excepturi quam tenetur, blanditiis quasi deserunt, nulla reprehenderit harum inventore temporibus
+          exercitationem? Libero mollitia nemo nulla, similique totam, dolore incidunt amet a alias sit iure corporis.
+        </p>
+      </div>
+    </section>
 
-    <!-- mesma coisa ocorre a seguir devido a prevenção no evento padrão do link -->
-    <a href="#" class="button button-blue">Boom!</a>
-  </div>
-  <div>
-    <h2>Eventos!</h2>
-    <div data-js="div">
-      <a href="#" data-js="link">
-        a <span data-js="span">span</span>
-      </a>
-    </div>
-  </div>
-  <div>
-    <h2>Mais Eventos :D</h2>
-    <input type="text" data-js="input">
-    <select data-js="select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
-  </div>
+    <footer class="main-footer">
+      <small class="main-footer__copyright">
+        2015 &copy; Todos os direitos reservados
+      </small>
+    </footer>
 
-
+  </div>
   <script src="main.js"></script>
-  <script>
-    var $a = document.querySelector('a.button.button-blue');
-    $a.addEventListener('click', boom, false)
-
-    function boom(event) {
-      event.preventDefault();
-      alert('Boom!');
-    }
-
-    function boom2() {
-      alert('Outro boom!');
-    }
-  </script>
-
 </body>
 
 </html>
