@@ -1,45 +1,69 @@
 (function () {
   'use strict';
 
+  var arr = [1, 2, 3, 4, 5];
+  var arr2 = arr.map(function (item) {
+    return item;
+  });
+  var arr3 = arr.slice();
+  var arr4 = arr.concat();
+
+  console.log(arr);
+  console.log(arr2);
+  console.log(arr3);
+  console.log(arr4);
+  console.log(arr === arr2);
+  console.log(arr === arr3);
+  console.log(arr === arr4);
+
+  var $divs = document.querySelectorAll('div');
+  var $divCopy = Array.prototype.slice.call($divs);
+  console.log($divs, $divCopy, $divs === $divCopy);
+
+  console.log('----------------');
+  var arr = [1, 2, 3, 4, 5];
+  console.log(Object.prototype.toString.call(arr));
+  console.log({prop1: 1, prop2: 2, prop3: 3}.toString());
+
   /** Seção eventos */
 
-  function on(element, event, callback) {
-    document.querySelector(element)
-      .addEventListener(event, callback, false);
-  }
+  // function on(element, event, callback) {
+  //   document.querySelector(element)
+  //     .addEventListener(event, callback, false);
+  // }
 
-  function off(element, event, callback) {
-    document.querySelector(element)
-      .removeEventListener(event, callback, false);
-  }
+  // function off(element, event, callback) {
+  //   document.querySelector(element)
+  //     .removeEventListener(event, callback, false);
+  // }
 
-  function handleClick(message) {
-    return function (e) {
-      e.preventDefault();
-      alert(message);
-    };
-  }
+  // function handleClick(message) {
+  //   return function (e) {
+  //     e.preventDefault();
+  //     alert(message);
+  //   };
+  // }
 
-  const handleClickDiv = handleClick('1º evento de click no div');
-  const handleClickNovoDiv = handleClick('2º evento de click no div');
+  // const handleClickDiv = handleClick('1º evento de click no div');
+  // const handleClickNovoDiv = handleClick('2º evento de click no div');
 
-  on('[data-js="div"]', 'click', handleClickDiv);
-  off('[data-js="div"]', 'click', handleClickDiv);
-  on('[data-js="div"]', 'click', handleClickNovoDiv);
-  on('[data-js="div"]', 'click', handleClickDiv);
+  // on('[data-js="div"]', 'click', handleClickDiv);
+  // off('[data-js="div"]', 'click', handleClickDiv);
+  // on('[data-js="div"]', 'click', handleClickNovoDiv);
+  // on('[data-js="div"]', 'click', handleClickDiv);
 
-  on('[data-js="link"]', 'click', handleClick('1º evento de click no link'));
+  // on('[data-js="link"]', 'click', handleClick('1º evento de click no link'));
 
-  on('[data-js="span"]', 'click', handleClick('1º evento de click no span'));
+  // on('[data-js="span"]', 'click', handleClick('1º evento de click no span'));
 
-  on('[data-js="input"]', 'keydown', function () {
-    console.log(this.value);
-  });
+  // on('[data-js="input"]', 'keydown', function () {
+  //   console.log(this.value);
+  // });
 
-  on('[data-js="select"]', 'change', function () {
-    document.querySelector('[data-js="input"]').value = this.value;
-  });
-  
+  // on('[data-js="select"]', 'change', function () {
+  //   document.querySelector('[data-js="input"]').value = this.value;
+  // });
+
   /** Seção debug */
 
   // var arr = [
@@ -179,5 +203,5 @@
 
 
 
-})()
+})();
 // console.log(myName);
