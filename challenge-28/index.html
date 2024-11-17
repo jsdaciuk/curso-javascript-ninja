@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>challenge-28</title>
+  <link rel="icon" href="data:,">
+  <!-- Adicionando o link do Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-4">
+  <!-- Crie um formulário com um input de texto que receberá um CEP e um botão
+  de submit; -->
+  <form data-js="form-cep" class="form-inline mb-4">
+    <div class="form-group mb-2">
+      <label for="cep" class="sr-only">CEP</label>
+      <input type="text" data-js="input-cep" placeholder="Digite o CEP">
+    </div>
+    <button type="submit" data-js="submit" class="btn btn-primary mb-2 ml-2">Buscar</button>
+  </form>
+  <!-- Crie uma área que receberá mensagens com o status da requisição:
+  "Carregando, sucesso ou erro."-->
+  <div class="mb-4">
+    <h2 data-js="status"></h2>
+  </div>
+
+  <!-- Crie uma estrutura HTML para receber informações de endereço:
+  "Logradouro, Bairro, Estado, Cidade e CEP." Essas informações serão
+  preenchidas com os dados da requisição feita no JS. -->
+  <div class="mb-4" data-js="cep">
+    <p><strong>Logradouro: </strong><span data-js="logradouro">-</span></p>
+    <p><strong>Bairro: </strong><span data-js="bairro">-</span></p>
+    <p><strong>Estado: </strong><span data-js="estado">-</span></p>
+    <p><strong>Cidade: </strong><span data-js="cidade">-</span></p>
+    <p><strong>CEP: </strong><span data-js="cep-info">-</span></p>
+  </div>
+
+
+  <script src="./dom.js"></script>
+  <script src="./challenge-28.js"></script>
+</body>
+
+</html>
