@@ -1,0 +1,28 @@
+[data-js="table-car"] td:first-child {
+  width: 425px;
+}
+
+[data-js="table-car"] td:first-child div {
+  width: 300px;
+  align-items: center;
+  height: auto;
+  overflow: hidden;
+}
+
+[data-js="table-car"] td:first-child img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.feedback-message {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Suavidade da transição */
+}
+
+.feedback-message.show {
+  opacity: 1;
+}
+
+.feedback-message.hide {
+  opacity: 0;
+}
